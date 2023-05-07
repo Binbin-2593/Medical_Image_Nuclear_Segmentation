@@ -4,7 +4,7 @@ streamlit==1.4.0
 numpy==1.20.2
 #opencv
 opencv-python==4.5.1.48
-pillow==6.0.0
+pillow==8.4.0
 scikit-image==0.18.1
 tqdm==4.46.1
 
