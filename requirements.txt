@@ -2,7 +2,7 @@ albumentations==1.2.0
 streamlit==1.4.0
 
 numpy==1.20.2
-libopencv==3.4.1
+libopencv==0.0.1
 py-opencv==4.6.0
 opencv-python==4.5.1.48
 pillow==8.4.0
