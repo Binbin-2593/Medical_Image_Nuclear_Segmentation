@@ -2,7 +2,7 @@ albumentations==1.2.0
 streamlit==1.4.0
 
 numpy==1.20.2
-opencv
+#opencv
 opencv-python==4.5.1.48
 pillow==6.0.0
 scikit-image==0.18.1
@@ -15,7 +15,7 @@ scikit-learn==1.0.2
 pip==22.3.1
 dataclasses==0.6
 attrs==22.1.0
-zlib
+#zlib
 wheel==0.38.4
 openssl==1.1.1t
 cryptography==39.0.1
