@@ -5,7 +5,7 @@ numpy==1.20.2
 libopencv==0.0.1
 #py-opecv
 opencv-python-headless==4.3.0.38
-opencv-python==4.5.1.48
+#opencv-python==4.5.1.48
 pillow==8.4.0
 scikit-image==0.18.1
 tqdm==4.46.1
