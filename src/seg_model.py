@@ -123,17 +123,17 @@ class SegModel:
         self.device = torch.device(
             'cuda:0' if torch.cuda.is_available() else 'cpu')
         self.model = self._setup_resnet()
-        """
+        
         if path_to_pretrained_model:
             self.model.load_state_dict(torch.load(
-                path_to_pretrained_model
+                path_to_pretrained_model, map_location=self.device
             ))
         """
         if path_to_pretrained_model:
             self.model = torch.load(
                 path_to_pretrained_model, map_location=self.device
             )
-        
+        """
         (self.train_transform,self.val_transform) = self._setup_transform()
 
     def train(
