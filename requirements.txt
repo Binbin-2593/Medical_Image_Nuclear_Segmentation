@@ -4,7 +4,7 @@ streamlit==1.4.0
 numpy==1.20.2
 #libopencv==0.0.1
 #py-opecv
-opencv-python-headless==4.3.0.37
+opencv-python-headless==3.4.17.63
 #opencv-python==4.5.1.48
 pillow==8.4.0
 scikit-image==0.18.1
