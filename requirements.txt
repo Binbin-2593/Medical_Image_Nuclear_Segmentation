@@ -1,5 +1,5 @@
 albumentations==1.2.0
-streamlit==1.4.0
+streamlit==1.21.0
 
 numpy==1.20.2
 #libopencv==0.0.1
