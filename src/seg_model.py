@@ -122,7 +122,7 @@ class SegModel:
         """
         self.device = torch.device(
             'cuda:0' if torch.cuda.is_available() else 'cpu')
-        self.model = self._setup_resnet().cuda()
+        self.model = self._setup_resnet()
 
         if path_to_pretrained_model:
             self.model.load_state_dict(torch.load(
@@ -394,7 +394,7 @@ class SegModel:
 
         for img in test_loader:
 
-            img = img.cuda()
+            img = img.to(self.device)
             output = self.model(img)
             output = torch.sigmoid(torch.squeeze(torch.squeeze(output,0),0)).detach().cpu().numpy()
             output = PIL.Image.fromarray(np.uint8(output*255))
