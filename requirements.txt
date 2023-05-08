@@ -9,7 +9,7 @@ opencv-python-headless==4.5.2.52
 pillow==8.4.0
 scikit-image==0.18.1
 tqdm==4.46.1
-
+simpleitk==2.2.0
 torch==1.12.1
 torchvision==0.13.1
 
