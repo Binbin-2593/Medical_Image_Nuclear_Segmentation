@@ -13,6 +13,7 @@ simpleitk==2.2.0
 torch==1.12.1
 torchvision==0.13.1
 
+cudatoolkit==10.2.89
 scikit-learn==1.0.2
 pip==22.3.1
 dataclasses==0.6
