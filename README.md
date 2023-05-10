@@ -12,21 +12,24 @@ Technologies used:
 * Docker
 
 # Summary
-This project involved using Deep Convolutional Neural network to create a machine learining application that could classify 250 bird species based on images. The model architecture is a [ResNet50](https://en.wikipedia.org/wiki/Residual_neural_network) that was initially trained on the [ImageNet Dataset](https://en.wikipedia.org/wiki/ImageNet). Transfer learning was utilized to fine tune the ImageNet model to learn how to classify birds. After training, the model correctly identified 97% of bird images held out from training. The trained model was then deployed in an interactive website to allow users to identify their own bird pictures.
+This project uses semantic segmentation depth learning neural network to segment the nucleus of medical image. See archs.py for related network. The trained model is then deployed to an interactive web site for shared use.
 
 # Dataset
-The dataset used for this project was found [on Kaggle](https://www.kaggle.com/gpiosenka/100-bird-species). Someone else went through the hard work of compiling and cleaning bird images so that I didn't have to. The dataset included 250 species of birds with about 100 - 130 training images of each species. Although this class imbalance did exist in the training data, it did not substantially affect the model scores. The validation and test data each included 5 images of each species. 
+The dataset used for this project is  [TNBC](https://zenodo.org/record/1175282#.ZFuHAhFBxPa) nuclei segmentation dataset. You can also use the dataset after our preprocessing, which can be downloaded [here](https://drive.google.com/file/d/16ajg19swFmvFqkH5sxsdoI3GX4aqjRB6/view) .
 
-In any given image, the bird was near the center of the image and took up at least 50% of the image. This made it great for training but not the best for use in real world inference. Having said that, each species of bird had a variety of different positions they would be in including flying, sitting, perched on trees, etc. Additionally, image augmentation was critical to a high scoring model. Although any model trained on this data would not likely be able to correctly identify a bird from very far away, it would be likely to correctly identify a bird regardless of what position the bird was in.
-### Barn Swallow:
-![](imgs/barn_swallow.jpg)
+The images in this data set are histopathology stained with hematoxylin and eosin, as follows:
+### Image:
+![](imgs/image.png)
 
-### Tree Swallow:
-![](imgs/tree_swallow.jpg)
+### Mask:
+![](imgs/mask.png)
+
+### Prediction:
+![](imgs/prediction.png)
 
 # Streamlit App
 
-I created a publically hosted application using Streamlit to showcase this project and allow users to interact with the trained model with a no-code implimentation. Users can select from any of the images I used for training, validation, and testing or they can upload their own image and see how the model would classify it.
+I created a publically hosted application using Streamlit to showcase this project and allow users to interact with the trained model with a no-code implimentation.Users can upload the same type of image for segmentation prediction, web page will show the results of segmentation prediction. 
 
-The app outputs a table of the top five predictions including confidence levels of each prediction and a link to the Wikipedia page of the bird species in case users want to learn more.
-![](imgs/st_app_shot.jpeg)
+Note that my training image size is 256 * 256, different sizes uploaded by users will be resize 256 * 256, may affect the segmentation results.
+![](imgs/website.png)
