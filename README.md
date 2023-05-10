@@ -24,9 +24,6 @@ The images in this data set are histopathology stained with hematoxylin and eosi
 ### Mask:
 ![](imgs/mask.png)
 
-### Prediction:
-![](imgs/prediction.png)
-
 # Streamlit App
 
 I created a publically hosted application using Streamlit to showcase this project and allow users to interact with the trained model with a no-code implimentation.Users can upload the same type of image for segmentation prediction, web page will show the results of segmentation prediction. 
