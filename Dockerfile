@@ -1,16 +1,18 @@
+# app/Dockerfile
+  
 FROM python:3.8
-
-COPY . /app
 
 WORKDIR /app
 
-#Install necessary packages from requirements1.txt with no cache dir allowing for installation on machine with very little memory on board
-RUN pip install --upgrade pip
-RUN pip --no-cache-dir install -r requirements.txt
+RUN apt-get update && apt-get install -y && apt-get install libgl1 -y
 
-#Exposing the default streamlit port
+COPY . .
+
+RUN pip3 install -r requirements.txt
+
 EXPOSE 8501
 
-#Running the streamlit app
-ENTRYPOINT ["streamlit", "run", "--server.maxUploadSize=5"]
-CMD ["src/Project_Eagle_Vision.py"]
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "sc/Display.py", "--server.port=8501", "--server.address=0.0.0.0"]
+~                      
